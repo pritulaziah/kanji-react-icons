@@ -1,17 +1,26 @@
 {
   "name": "kanji-react-icons",
   "version": "1.0.0",
-  "description": "",
+  "description": "React icons kanji",
+  "main": "index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "npx tsc",
     "lint": "eslint .",
-    "parse": "npx ts-node index.ts",
+    "parse": "npx ts-node parser.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pritulaziah/kanji-react-icons.git"
   },
-  "keywords": [],
+  "keywords": [
+    "icons",
+    "kanji",
+    "kanjivg"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
