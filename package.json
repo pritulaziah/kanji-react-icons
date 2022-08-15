@@ -1,6 +1,6 @@
 {
   "name": "kanji-react-icons",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React icons kanji",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

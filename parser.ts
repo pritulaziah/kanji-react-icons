@@ -57,7 +57,7 @@ for (const filename of kanji) {
     const jsCode = transform.sync(
       svgCode,
       {
-        icon: false,
+        icon: "100%",
         typescript: true,
         plugins: [
           "@svgr/plugin-svgo",
