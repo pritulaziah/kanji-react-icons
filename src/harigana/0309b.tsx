@@ -18,7 +18,8 @@ const Icon0309b = (props: SVGProps<SVGSVGElement>) => (
         strokeLinejoin: "round",
       }}
     >
-      <path d="M3.5 12.75c2.96 2 6.46 6.13 8.35 9.69M14.29 6.73c2.99 1.97 6.51 6.05 8.41 9.57" />
+      <path d="M3.5 12.75c2.96 2 6.46 6.13 8.35 9.69" />
+      <path d="M14.29 6.73c2.99 1.97 6.51 6.05 8.41 9.57" />
     </g>
     <g
       style={{

@@ -64,7 +64,7 @@ for (const filename of kanji) {
           "@svgr/plugin-jsx",
           "@svgr/plugin-prettier",
         ],
-        jsxRuntime: "classic",
+        runtimeConfig: true,
       },
       { componentName: `Icon${name}` }
     );
