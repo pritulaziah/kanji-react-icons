@@ -45,7 +45,6 @@ for (const filename of kanji) {
   const isKatakana = checkIsKatakana(code);
 
   if (isHarigana || isKatakana) {
-    const charCode = String.fromCharCode(code);
     const filepath = path.resolve(sourceDir, filename);
     const file = fs.readFileSync(filepath);
 
