@@ -1,5 +1,6 @@
 import * as fs from "fs";
 import * as path from "path";
+import { transform } from "@svgr/core";
 
 const checkIsHarigana = (v: number) => {
   return v >= 12352 && v <= 12447;
@@ -11,8 +12,8 @@ const checkIsKatakana = (v: number) => {
 
 const sourceDir = "kanji";
 const kanji = fs.readdirSync(sourceDir);
-const outDir = "new_kanji";
-const replaceKVGArr = [
+const outDir = "src";
+const replaceKVGArray = [
   "type",
   "element",
   "variant",
@@ -34,6 +35,7 @@ if (fs.existsSync(outDir)) {
 fs.mkdirSync(outDir);
 fs.mkdirSync(path.resolve(outDir, "katakana"));
 fs.mkdirSync(path.resolve(outDir, "harigana"));
+fs.writeFileSync(path.resolve(outDir, "index.ts"), "");
 
 for (const filename of kanji) {
   const name = path.parse(filename).name;
@@ -46,24 +48,35 @@ for (const filename of kanji) {
     const charCode = String.fromCharCode(code);
     const filepath = path.resolve(sourceDir, filename);
     const file = fs.readFileSync(filepath);
-    const ext = path.parse(filename).ext;
 
-    let fileString = file.toString();
+    let svgCode = file.toString();
 
-    for (const replacer of replaceKVGArr) {
-      fileString = fileString.replace(
-        new RegExp(`kvg:${replacer}="[^"]*"`, "g"),
-        ""
-      );
+    for (const replacer of replaceKVGArray) {
+      svgCode = svgCode.replace(new RegExp(`kvg:${replacer}="[^"]*"`, "g"), "");
     }
 
-    fs.writeFileSync(
-      path.resolve(
-        outDir,
-        isKatakana ? "katakana" : "harigana",
-        `${charCode}${ext}`
-      ),
-      file
+    const jsCode = transform.sync(
+      svgCode,
+      {
+        icon: false,
+        typescript: true,
+        plugins: [
+          "@svgr/plugin-svgo",
+          "@svgr/plugin-jsx",
+          "@svgr/plugin-prettier",
+        ],
+        jsxRuntime: "classic",
+      },
+      { componentName: `Icon${name}` }
+    );
+
+    const formDir = isKatakana ? "katakana" : "harigana";
+
+    fs.writeFileSync(path.resolve(outDir, formDir, `${name}.tsx`), jsCode);
+
+    fs.appendFileSync(
+      path.resolve(outDir, "index.ts"),
+      `export { default as Icon${name} } from './${formDir}/${name}';\n`
     );
   }
 }
