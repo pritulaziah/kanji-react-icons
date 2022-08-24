@@ -1,6 +1,6 @@
 {
   "name": "kanji-react-icons",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "React icons kanji",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,7 +10,7 @@
   "scripts": {
     "build": "npx tsc",
     "lint": "eslint .",
-    "parse": "npx ts-node parser.ts",
+    "parse": "npx ts-node scripts/parser.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -45,5 +45,8 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "publishConfig": {
+    "directory": "dist"
   }
 }

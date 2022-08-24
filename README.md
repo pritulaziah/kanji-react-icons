@@ -12,4 +12,5 @@ Because <a href="https://github.com/svg/svgo/issues/1530">this</a> svgo bug
 
 - [x] Hiragana
 - [x] Katakana
-- [ ] Kanji
+- [x] Kanji
+- [ ] split package
