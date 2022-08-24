@@ -17,8 +17,8 @@ export const replaceKVGAttrs = (str: string) => {
     "phon",
   ];
 
-  for (const replacer of kvgAttrs) {
-    str = str.replace(new RegExp(`kvg:${replacer}="[^"]*"`, "g"), "");
+  for (const kvgAttr of kvgAttrs) {
+    str = str.replace(new RegExp(`kvg:${kvgAttr}="[^"]*"`, "g"), "");
   }
 
   return str;
