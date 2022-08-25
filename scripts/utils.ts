@@ -31,3 +31,6 @@ export const createIndexFile = (dir: string, data = "") => {
 export const appendIndexFile = (dir: string, data: string) => {
   fs.appendFileSync(path.resolve(dir, "index.ts"), data);
 };
+
+export const capitalize = (str: string) =>
+  `${str.charAt(0).toUpperCase()}${str.slice(1)}`;

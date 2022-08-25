@@ -13,5 +13,6 @@ Because <a href="https://github.com/svg/svgo/issues/1530">this</a> svgo bug
 - [x] Hiragana
 - [x] Katakana
 - [x] Kanji
-- [ ] split package
-- [ ] add example
+- [x] Minimize
+- [ ] Split package folders
+- [ ] Add example
