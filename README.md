@@ -2,7 +2,8 @@
 
 React icons from <a href="https://github.com/KanjiVG/kanjivg">kanjivg</a>
 
-[![npm version](https://badge.fury.io/js/kanji-react-icons.svg)](https://badge.fury.io/js/kanji-react-icons)
+[![npm version](https://badgen.net/npm/v/kanji-react-icons)](https://badgen.net/npm/v/kanji-react-icons)
+[![minified size](https://badgen.net/bundlephobia/min/kanji-react-icons)](https://badgen.net/bundlephobia/min/kanji-react-icons)
 
 ## Why?
 
