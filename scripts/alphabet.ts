@@ -1,15 +1,15 @@
 import katakana from "./katakana.json";
-import harigana from "./harigana.json";
+import hiragana from "./hiragana.json";
 import kanji from "./kanji.json";
 
 const checkIs = (alphabet: string[]) => (char: string) =>
   alphabet.includes(char);
 
-type Alphabets = "katakana" | "harigana" | "kanji";
+type Alphabets = "katakana" | "hiragana" | "kanji";
 
 export const alphabets: { [key in Alphabets]: (char: string) => boolean } = {
   katakana: checkIs(katakana),
-  harigana: checkIs(harigana),
+  hiragana: checkIs(hiragana),
   kanji: checkIs(kanji),
 };
 

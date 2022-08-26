@@ -1,3 +1,3 @@
 export * from './katakana';
-export * from './harigana';
+export * from './hiragana';
 export * from './kanji';
