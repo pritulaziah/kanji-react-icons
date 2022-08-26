@@ -16,8 +16,8 @@ Because <a href="https://github.com/svg/svgo/issues/1530">this</a> svgo bug
 import * as kanji from "kanji-react-icons/dist/kanji";
 // Katakana
 import * as katakana from "kanji-react-icons/dist/katakana";
-// Harigana
-import * as harigana from "kanji-react-icons/dist/harigana";
+// hiragana
+import * as harigana from "kanji-react-icons/dist/hiragana";
 // All
 import * as allKanji from "kanji-react-icons";
 // What u need
