@@ -7,6 +7,7 @@ import {
   createIndexFile,
   replaceKVGAttrs,
 } from "./utils";
+import template from "./template";
 import { alphabets, findAlphabet } from "./alphabet";
 
 const sourceDir = "kanji";
@@ -18,7 +19,12 @@ if (fs.existsSync(outDir)) {
 }
 
 fs.mkdirSync(outDir);
-createIndexFile(outDir);
+fs.writeFileSync(
+  path.resolve(outDir, "kanjiIcon.ts"),
+  `import { SVGProps } from "react";
+export type KanjiIconType = (props: SVGProps<SVGSVGElement>) => JSX.Element;\n`
+);
+createIndexFile(outDir, `export { KanjiIconType } from "./kanjiIcon";\n`);
 
 for (const alphabet of Object.keys(alphabets)) {
   fs.mkdirSync(path.resolve(outDir, alphabet));
@@ -51,6 +57,7 @@ for (const filename of kanji) {
           "@svgr/plugin-prettier",
         ],
         runtimeConfig: true,
+        template,
       },
       { componentName }
     );

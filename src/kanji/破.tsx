@@ -1,7 +1,7 @@
 import * as React from "react";
-import { SVGProps } from "react";
+import { KanjiIconType } from "../kanjiIcon";
 
-const Kanji破 = (props: SVGProps<SVGSVGElement>) => (
+const Kanji破: KanjiIconType = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="100%"
